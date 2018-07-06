@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var name = "Yang seong ho";
+		var re = /^(\w+)\s(\w+)\s(\w+)$/;
+
+		var newname = name.replace(re, "$2 $3, $1");
+		alert(newname);
+
+		document.getElementById("results").innerHTML = "before:" + name
+				+ "<br/>after:" + newname;
+
+	}
+</script>
+</head>
+<body>
+	<h3>[\s공백으로 순서 변경]</h3>
+	<p id="results"></p>
+</body>
+</html>

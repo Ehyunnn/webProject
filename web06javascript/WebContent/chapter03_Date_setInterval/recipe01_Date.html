@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+p{
+	background-color: #ffff00;
+	width: 200px;
+	text-align: center;
+	padding: 10px;
+	border: 2px inset #f00;
+}
+#date{
+	background-color: #ff00ff;
+	width: 300px;
+	padding: 10px;
+}
+.sp1{
+	background-color: #00ffff;
+}
+</style>
+<!-- <link href="???.css"> -->
+<script type="text/javascript">
+	window.onload = function() {
+		var dtElem = document.getElementById("date");
+		var dt = new Date();
+		dtElem.innerHTML = "<p>" + 
+		dt + "<span class='sp1'>kim</span></p>";
+		
+		
+		
+	}
+</script>
+</head>
+<body>
+	<div id="date"></div>
+</body>
+</html>

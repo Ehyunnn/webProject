@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var charSets = new Array("yang", "bb", "yang", "ab", "cc", "yang", "dd",
+			"yang");
+
+	//1.forEach 함수 설정방법. 이름없는 함수
+	charSets.forEach(function(element, index, array) {
+		if (element == "yang")
+			array[index] = "****";
+	});
+	console.log("1:" + charSets.toString());
+
+	//2.forEach 함수 설정방법. 이름을 명시해도 상관없음.
+	charSets.forEach(function test(element, index, array) {
+		if (element == "****")
+			array[index] = "$$$$";
+	});
+	console.log("2:" + charSets.toString());
+
+	//3.forEach 함수 설정방법. 이름을 명시하고 별도 정의하면 이름으로 호출가능.
+	function test(element, index, array) {
+		if (element == "$$$$")
+			array[index] = "yang";
+	}
+	charSets.forEach(test);
+	console.log("3:" + charSets.toString());
+	
+	
+	var names = new Array();
+	names.push("aaa");
+	names.push("bbb");
+	names.push("ccc");
+	names.push("ddd");
+	
+	names.forEach(fn);
+	
+	function fn(x){
+		console.log(x);
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

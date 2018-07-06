@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	console.log(document.getElementById("aaa"));
+	var su = 10;
+	console.log(su);
+	var su = 20;
+	console.log(su);
+	window.onload = function(){
+		console.log("onload....");
+		console.log(document.getElementById("aaa"));
+		var aaa = document.getElementById("aaa");
+		aaa.onclick = function(){
+			console.log("onclick....");
+			console.log(su);
+		};
+		console.log(su);
+	};
+	console.log("end....");
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log("aaaa");
+		console.log(document.getElementById("aaa"));
+	</script>
+	<h1 id="aaa">var</h1>
+	<script type="text/javascript">
+		console.log("bbbb");
+		console.log(document.getElementById("aaa"));
+	</script>
+</body>
+</html>

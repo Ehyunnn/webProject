@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="result"></div>
+	<script>
+		var prefLineLength = 20;
+		var oldStr = "This is a string";
+
+		var diff = prefLineLength - oldStr.length;
+		alert(diff);
+		var filler = '&lt;&nbsp;&gt;';//< >< >< >< >This is a string
+
+		for ( var i = 0; i < diff; i++) {
+			oldStr = filler + oldStr;
+		}
+
+		document.getElementById("result").innerHTML = oldStr;
+	</script>
+</body>
+</html>

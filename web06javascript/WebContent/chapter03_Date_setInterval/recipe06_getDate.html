@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var futureDate = new Date();
+		futureDate.setDate(futureDate.getDate() + 10);//10일후
+
+		alert(futureDate);
+
+		var dateElement = document.getElementById("date");
+		dateElement.innerHTML = futureDate + "";
+	}
+</script>
+</head>
+<body>
+	<div id="date"></div>
+</body>
+</html>

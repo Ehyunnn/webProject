@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+
+		//실행된 브라우저 정보
+		var browser = navigator.userAgent;
+		var info = "<p>Browser: " + browser + "</p>";
+
+		//운영체제 플렛폼 정보
+		var platform = navigator.platform;
+		info += "<p>Platform: " + platform + "</p>";
+
+		
+		
+		var agt=browser.toLowerCase();
+		  if (agt.indexOf("chrome/") != -1) info += "<p>Platform: Chrome/</p>" ;
+	
+		  document.getElementById("output").innerHTML = info;
+	
+	}
+</script>
+</head>
+<body>
+	<div id="output"></div>
+</body>
+</html>

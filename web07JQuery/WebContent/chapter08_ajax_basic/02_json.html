@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<!-- jQuery 설치 2 : CDN -->
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+	
+</script>
+<script>
+	$(document).ready(function() {
+		$("#cal").bind("click", function() {
+
+			$.ajax({
+
+				url : "jsp/calc2.jsp",
+				data : {
+
+					v1 : $("#v1").val(),
+					v2 : $("#v2").val()
+				},
+				dataType : "json",
+				success : function(responseData, status, xhr) {
+
+					$("#result").text(responseData.result);
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	값1
+	<input type="text" name="v1" id="v1" value="111"> + 값2
+	<input type="text" name="v2" id="v2" value="222">
+	<div id="result"></div>
+	<button id="cal">계산</button>
+</body>
+</html>

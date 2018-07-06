@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		var searchString = "Now te te te is the time and this is the time and that is the time";
+		var pattern = /t\w*e/g;//g: 전역검색(최종일치만 반영)
+		// var pattern = /t\w{2}e/g;//g: 전역검색(최종일치만 반영)
+		var matchArray;
+
+		var str = "";
+		while ((matchArray = pattern.exec(searchString)) != null) {
+			str += "at " + matchArray.index +
+			" we found <mark>" + matchArray[0]
+					+ "</mark><br />";
+		}
+		document.getElementById("results").innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	<p id="results"></p>
+</body>
+</html>

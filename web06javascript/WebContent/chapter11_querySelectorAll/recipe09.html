@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+div {
+	padding: 50px;
+	border: 5px solid #ff0000;
+}
+
+.red {
+	color: red;
+}
+</style>
+<script>
+	window.onload = function() {
+		if (document.getElementsByClassName) {
+			var elems = document.getElementsByClassName("red");
+			alert("getElementsByClassName('red') : " + elems.length + " elements");
+		}
+
+		elems = document.querySelectorAll(".red");
+		alert("querySelectorAll('.red') :  " + elems.length + " elements");
+	}
+</script>
+</head>
+<body>
+	<div>
+		<p class="red">Paragraph one</p>
+		<p>Paragraph two</p>
+		<p>Paragraph three</p>
+	</div>
+	<div>
+		<p>Paragraph one</p>
+		<p class="red">Paragraph two</p>
+	</div>
+	<div>
+		<ul>
+			<li>List item one</li>
+			<li>List item two</li>
+		</ul>
+		<p class="red">Paragraph one</p>
+		<p>Paragraph two</p>
+	</div>
+</body>
+</html>

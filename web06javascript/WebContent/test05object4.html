@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	//{num:8,fn:function(){}}
+	function TestObject(){
+		this.num = 88;
+		this.name = "lee8";
+		var tel = "0108";
+		this.getTel = function(){
+			return tel;
+		};
+		this.setTel = function(x){
+			tel = x;
+		};
+	}
+	
+	var obj = new TestObject();
+	obj.addr = "seoul";
+	obj.num = "aaaaa";
+	delete obj.name;
+	for ( var key in obj) {
+		console.log(obj[key]);
+	}
+	obj.tel = "02";
+	obj.setTel("0800");
+	console.log(obj.tel);
+	console.log(obj.getTel());
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn">change text</button>
+	<p id="p1">hello1</p>
+	<p id="p2">hello2</p>
+	<p id="p3">hello3</p>
+	<p id="p4">hello4</p>
+	<p id="p5">hello5</p>
+</body>
+</html>

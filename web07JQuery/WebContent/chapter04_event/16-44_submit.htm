@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#my_form').submit(function (event) {
+                // �Է� ������ value�� �����ɴϴ�.
+                var name = $('#name').val();
+                var password = $('#password').val();
+
+                // �����մϴ�.
+                alert(name + ' : ' + password);
+
+                // �⺻ �̺�Ʈ�� �����մϴ�.
+//                 event.preventDefault();
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<body>
+    <form id="my_form" action="16-42_scroll.htm">
+        <table>
+            <tr>
+                <td>�̸�: </td>
+                <td><input type="text" name="name" id="name"/></td>
+            </tr>
+            <tr>
+                <td>���й�ȣ: </td>
+                <td><input type="password" name="password" id="password"/></td>
+            </tr>
+        </table>
+        <input type="submit" value="����"/>
+    </form>
+</body>
+</html>

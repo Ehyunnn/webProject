@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//Create the original array.
+	var arr = [ 5, "element", 10, "the", true ];
+
+	// Create an array that contains the string
+	// values that are in the original array.
+	var result = arr.filter(function(value) {
+		return (typeof value === 'string');
+	});
+	var result2 = arr.filter(function(value) {
+		return (typeof value !== 'string');
+	});
+
+	document.write(result);
+	// Output: element, the
+	
+	window.onload = function(){
+		document.getElementById("result").innerHTML = result2;
+	};
+	
+</script>
+</head>
+<body>
+	<div id="result"></div>
+</body>
+</html>

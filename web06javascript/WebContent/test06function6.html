@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+	function test(fn,fn2){
+		console.log(fn);
+		fn();
+		fn2();
+	}
+	
+	test(function(){
+		console.log("first fn...");
+	},function(){
+		console.log("second fn...");
+	});
+	
+	
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn_plus">++</button>
+	<button id="btn_minus">--</button>
+	<p id="p1">hello1</p>
+</body>
+</html>

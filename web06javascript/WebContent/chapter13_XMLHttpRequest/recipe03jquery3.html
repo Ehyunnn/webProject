@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div.out {
+	width: 40%;
+	height: 120px;
+	margin: 0 15px;
+	background-color: #D6EDFC;
+	float: left;
+}
+</style>
+<script src="jquery-3.0.0.js"></script>
+<script>
+	$(document).ready(function() {
+
+		$("img").each(function(index, item) {
+			console.log(item);
+			$(this).mouseenter(function() {
+				var src = $(this).attr("src");
+				console.log(src);
+				$.get("recipe03jquery.jsp?photo=" + src, 
+						function(data, status) {
+					$("div.out").text(data);
+				});
+
+			}).mouseleave(function() {
+				$("div.out").text("mouse leave");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<img class="img1" src="dragonfly2.thumbnail.jpg" />
+	<img class="img2" src="dragonfly4.thumbnail.jpg" />
+	<img class="img3" src="dragonfly6.thumbnail.jpg" />
+	<img class="img4" src="dragonfly8.thumbnail.jpg" />
+	<div class="out"></div>
+
+</body>
+</html>

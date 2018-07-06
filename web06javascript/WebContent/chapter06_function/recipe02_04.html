@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var i = 0;
+
+	function increment() {
+		i++;
+		console.log("value is " + i);
+	}
+
+	function runIncrement() {
+		while (i < 5) {
+			increment();
+		}
+	}
+
+	window.onload = function() {
+		runIncrement();
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	padding: 10px;
+	border: 1px solid #000000;
+}
+
+.red {
+	color: red;
+}
+</style>
+<script>
+	window.onload = function() {
+		try {
+			var elems = document.querySelectorAll('*[class]');
+			if (elems.length > 0)
+				alert("found " + elems.length + " elements");
+
+			elems = document.querySelectorAll('*[class="red"]');
+			if (elems.length > 0)
+				alert("found " + elems.length + " elements");
+
+			elems = document.querySelectorAll('*:not(.red)');
+			if (elems.length > 0)
+				alert("found " + elems.length + " elements");
+		} catch (e) {
+			alert("example does not work in your browser");
+		}
+	}
+	
+	
+</script>
+</head>
+<body>
+	<div>
+		<p class="red">Paragraph one</p>
+		<p>Paragraph two</p>
+		<p>Paragraph three</p>
+	</div>
+	<div class="red">
+		<p>Paragraph one</p>
+		<p class="red">Paragraph two</p>
+	</div>
+	<div>
+		<ul class="blue">
+			<li>List item one</li>
+			<li>List item two</li>
+		</ul>
+		<p class="red">Paragraph one</p>
+		<p>Paragraph two</p>
+	</div>
+</body>
+</html>

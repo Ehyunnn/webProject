@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function curry(fn, scope) {
+		//넘어온 인자는 4개이지만 선언시 일단 2개만 받을 수 있다.
+		console.log("1..curry(fn, scope) call");
+		var scope = scope || window;
+		var args = [];
+		//인자 개수 확인
+		console.log("first:arguments.length:"+arguments.length);
+		//3번째 인자부터 인자 길이까지 반복하면서 인자값 배열에 넣기
+		for ( var i = 2, len = arguments.length; i < len; ++i) {
+			args.push(arguments[i]);
+		}
+		console.log("args:"+args);
+		return function() {
+			var args2 = [];
+			console.log("second:arguments.length:"+arguments.length);
+			for ( var i = 0; i < arguments.length; i++) {
+				args2.push(arguments[i]);
+			}
+			console.log("args2:"+args2);//args2 : 6.42, 8
+
+			var argstotal = args.concat(args2);
+
+			console.log("argstotal:"+argstotal);//argstotal:3, 4, 6.42, 8
+
+			return fn.apply(scope, argstotal);
+// 			return fn(argstotal[0],argstotal[1],argstotal[2],argstotal[3]);
+		};
+	}
+
+	function diffPoint(x1, y1, x2, y2) {
+		console.log("2..diffPoint(x1, y1, x2, y2) call");
+		console.log(x1+","+y1+","+x2+","+y2)
+
+		console.log( x2+"-"+x1+"="+(x2 - x1)+"의 절대값:"+Math.abs(x2 - x1)+", "+y2+"-"+y1+"="+(y2 - y1)+"의 절대값:"+ Math.abs(y2 - y1));
+
+		return [ Math.abs(x2 - x1), Math.abs(y2 - y1) ];
+	}
+
+	window.onload = function() {
+
+		var diffOrigin = curry(diffPoint, null, 3.0, 4.0);
+
+		// diffOrigin의 리턴함수6,42와 8.0 이 전달된다.
+		var newPt = diffOrigin(6.42, 8.0);
+
+		console.log("3..newPt call");
+		console.log(newPt);
+
+		//아래도 주석풀고 실행
+		var farPoint = curry(diffPoint, null, 183.66, 98.77);
+		var ptA = farPoint(1.33, 2.11);
+		console.log(ptA);
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

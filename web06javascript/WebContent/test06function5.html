@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+	function test(fn,x,y){
+		console.log(fn);
+		console.log(x);
+// 		if(fn==undefined){
+// 			fn = function(){
+// 				console.log("new fn...");
+// 			};
+// 		}
+		fn = fn || function(){console.log("new fn...");};
+		fn();
+		x = x || "kim";//null,undefined,0,""
+		console.log(x);
+	}
+	
+	test(function(){
+		console.log("first fn...");
+	},"");
+	
+	
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn_plus">++</button>
+	<button id="btn_minus">--</button>
+	<p id="p1">hello1</p>
+</body>
+</html>

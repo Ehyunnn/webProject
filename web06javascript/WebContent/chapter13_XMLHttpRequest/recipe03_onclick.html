@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+img {
+	padding: 5px;
+}
+
+.popup {
+	position: absolute;
+	background-color: #fff;
+	padding: 5px;
+	border: 2px solid #f00;
+	width: 100px;
+}
+</style>
+<script>
+	var xmlhttp;
+
+	function manageEvent(eventObj, event, eventHandler) {
+		if (eventObj.addEventListener) {
+			eventObj.addEventListener(event, eventHandler, false);
+		} else if (eventObj.attachEvent) {
+			event = "on" + event;
+			eventObj.attachEvent(event, eventHandler);
+		}
+	}
+
+	function getInfo(evt) {
+
+		evt = evt || window.event;
+
+		// prepare request
+		if (!xmlhttp) {
+			xmlhttp = new XMLHttpRequest();
+		}
+		var value = document.getElementById("id").value;
+		var url = "idCheck.jsp?id=" + value;
+		xmlhttp.open('GET', url, true);
+		xmlhttp.onreadystatechange = showWindow;
+		xmlhttp.send(null);
+		console.log("getInfo()......" + url);
+		return false;
+	}
+
+	function showWindow() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			console.log(xmlhttp.responseText);
+
+			var response = xmlhttp.responseText.split("#");
+
+			console.log(response[0].trim());
+			var result = document.getElementById("result");
+			result.innerHTML = response[1];
+		}
+	}
+
+	window.onload = function() {
+		var btn = document.getElementById("btn");
+// 		manageEvent(btn, "click", getInfo);
+		btn.onclick = getInfo;
+	};
+</script>
+</head>
+<body>
+	<input type="text" name="id" id="id" value="admin"/>
+	<button id="btn">중복체크</button>
+	<div id="result">good or bad</div>
+	idCheck.jsp를 활용
+</body>
+</html>

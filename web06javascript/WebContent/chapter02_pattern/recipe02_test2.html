@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var cookbookString = new Array();
+
+		cookbookString[0] = "Joe's Cooking Book";
+		cookbookString[1] = "Sam's Cookbook";
+		cookbookString[2] = "JavaScript CookBook";
+		cookbookString[3] = "JavaScript cookbook";
+
+		// search pattern
+		var pattern = /Cook.*Book/i;//대소문자 상관없음.
+		for ( var i = 0; i < cookbookString.length; i++)
+			alert(cookbookString[i] + " " + pattern.test(cookbookString[i], i));
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

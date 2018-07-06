@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>fn05Object.html</title>
+<script type="text/javascript">
+	console.log("Object3......");
+	
+	//객체용 함수를 활용하여
+	//국어,영어,수학,총점,평균,등급을 출력하는 프로그램을 완성하세요.
+	//각각의 성적은 학생명 홍길동,최길동,김길동 3명에게 적용하세요.
+	//함수와 객체와 배열을 적절히 활용하여 완성하세요.
+
+	function Score(){
+		var kor = 0;
+		var eng = 0;
+		var math = 0;
+		
+		this.setKor = function(x){
+			kor = x;
+		};
+		this.setEng = function(x){
+			eng = x;
+		};
+		this.setMath = function(x){
+			math = x;
+		};
+		
+		this.grade = function(){
+			var total = kor + eng + math;
+			var result = "";
+			console.log(total);
+			result += "total:"+total;
+			console.log(Math.round(total / 3));
+
+			var avg = Math.round(total / 3);
+			result += "avg:"+avg;
+			//1.if
+			if (100 >= avg && 90 <= avg) {
+				console.log("수");
+				result += "grade:수";
+			} else if (80 <= avg) {
+				console.log("우");
+				result += "grade:우";
+			} else if (70 <= avg) {
+				console.log("미");
+				result += "grade:미";
+			} else if (60 <= avg) {
+				console.log("양");
+				result += "grade:양";
+			} else {
+				console.log("가");
+				result += "grade:가";
+			}
+			
+			return result;
+			
+		};
+	}
+	
+	window.onload = function(){
+		var names = ["홍길동","최길동","김길동"];
+		
+		var s = new Score();
+		var resultString = "";
+		for (var i = 0; i < names.length; i++) {
+			
+//		 	console.log(100 + parseInt(kor));
+			
+		 	var kor = prompt(names[i]+" 국어점수를 입력하세요","99");
+			s.setKor(parseInt(kor));
+		 	var eng = prompt(names[i]+" 영어점수를 입력하세요","99");
+			s.setEng(parseInt(eng));
+		 	var math = prompt(names[i]+" 수학점수를 입력하세요","99");
+			s.setMath(parseInt(math));
+			resultString += names[i]+":"+s.grade()+"<br/>";
+			
+			
+		}
+		var blk = document.getElementById("result");
+		blk.innerHTML = resultString;
+	};
+	
+	
+	
+	
+</script>
+
+</head>
+<body>
+	<h1>fn05Object3.html</h1>
+	<div id="result"></div>
+</body>
+</html>

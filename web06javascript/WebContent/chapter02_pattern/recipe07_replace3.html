@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		var testString = "   this is the string    ";
+// 		alert("before:" + testString);
+		document.getElementById("before").innerHTML = testString+":"+testString.length;
+
+		// trim white space from the beginning
+		testString = testString.replace(/^\s+/, "");
+
+		// trim white space from the end
+		testString = testString.replace(/\s+$/, "");
+
+// 		alert("after:" + testString);
+		document.getElementById("after").innerHTML = testString+":"+testString.length;
+	}
+</script>
+</head>
+<body>
+	<h3>[좌우 공백제거]</h3>
+	<pre id="before"></pre>
+	<pre id="after"></pre>
+</body>
+</html>

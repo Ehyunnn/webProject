@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var origArray = new Array(4);
+	origArray[0] = new Array("00", "01");
+	origArray[1] = new Array("10", "11");
+	origArray[2] = new Array("20", "21");
+	origArray[3] = new Array("30", "31");
+	
+	//[["00", "01"],["10", "11"],["20", "21"],["30", "31"]]
+	
+	console.log("1................");
+	for ( var x = 0; x < origArray.length; x++) {
+		for ( var i = 0; i < origArray[x].length; i++) {
+			console.log(origArray[x][i]);
+		}
+		console.log("\n");
+	}
+
+	console.log("2................");
+	//slice(start,end)
+	var newArray = origArray.slice(1, 3);//1,2 row slice
+	console.log("2................"+newArray);
+	console.log("2................"+newArray.length);
+	for ( var x = 0; x < newArray.length; x++) {
+		for ( var i = 0; i < newArray[x].length; i++) {
+			console.log(newArray[x][i]);
+		}
+		console.log("\n");
+	}
+
+	console.log("3................");
+	// modify original
+	origArray[1][0] = "octopus";
+	for ( var x = 0; x < origArray.length; x++) {
+		for ( var i = 0; i < origArray[x].length; i++) {
+			console.log(origArray[x][i]);
+		}
+		console.log("\n");
+	}
+
+	console.log("4................");
+	console.log("4................"+newArray);
+	newArray[1][1] = "kitten";//[10,11],[20,"kitten"]
+	//origArray에도 영향이 미친다.
+	for ( var x = 0; x < origArray.length; x++) {
+		for ( var i = 0; i < origArray[x].length; i++) {
+			console.log(origArray[x][i]);
+		}
+		console.log("\n");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

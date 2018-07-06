@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+	var obj = {num:9,name:"kim"};
+	console.log(obj);
+	console.log(obj.num);
+	var key = "num";
+	console.log(obj[key]);
+	var key = "name";
+	console.log(obj[key]);
+	var key = "tel";
+	obj[key] = "010";
+	console.log(obj[key]);
+	obj.address = "seoul";
+	console.log(obj.address);
+	
+	
+	var obj = {num:9,name:"kim",arr:[1,2,3]};
+	console.log(obj);
+	
+	var obj = {num:9,fn:function(){},arr:[1,2,3]};
+	console.log(obj);
+	
+	
+	
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<h1 id="aaa">object</h1>
+</body>
+</html>

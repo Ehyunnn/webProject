@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	window.onload = function(){
+		var fruitArray = [ 'apple', 'peach', 'lemon', 'lime' ];
+		var resultString = fruitArray.join('-'); // apple-peach-lemon-lime
+
+		alert(resultString);
+
+		var div = document.getElementById("result");
+		div.innerHTML = resultString;
+	}
+</script>
+</head>
+<body>
+	<div id="result"></div>
+
+</body>
+</html>

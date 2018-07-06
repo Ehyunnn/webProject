@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+
+		// first approach
+
+		var targetNode = document.getElementById("target");
+		if (targetNode.hasAttribute("class")) {
+			alert(targetNode.getAttribute("class"));
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="target" class="target">This is a paragraph in a div
+		element</div>
+
+</body>
+</html>

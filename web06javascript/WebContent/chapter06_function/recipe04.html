@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function makeHello(names) {
+		names[names.length] = "Hello " + names[0] + " " + names[1];
+		console.log(names.toString());
+	};
+
+	window.onload = function() {
+		var names = new Array('KIM', 'YANG');
+		console.log(names[2]);
+		makeHello(names);
+		console.log(names[2]); // displays Hello KIM YANG
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

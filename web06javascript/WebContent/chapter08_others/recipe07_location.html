@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		
+		//프로젝트 경로 획득
+		console.log(location.protocol + "//" + location.hostname+":"+location.port);
+		console.log(location.pathname);
+		
+		var items = location.pathname.substr(1).split("/");
+		var breadcrumbTrail = "<p>";
+		
+		for ( var i = 0; i < items.length; i++) {
+			breadcrumbTrail += " -> " + items[i];
+		}
+		
+		breadcrumbTrail += "</p>";
+
+		document.getElementById("output").innerHTML = breadcrumbTrail;
+		
+		document.getElementById("output").onclick = function(){
+			location.href = "recipe06_window_screen.html";
+			
+		};
+		
+	}
+</script>
+</head>
+<body>
+	<div id="output"></div>
+</body>
+</html>

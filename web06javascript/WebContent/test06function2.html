@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+	function test(){
+		console.log("test()....");
+		var count = 0;
+		function fn(){
+			count++;
+			//console.log("fn()...."+count);
+			return count;
+		}
+		return fn;
+	}
+	var fn = test();
+	console.log("fn()...."+fn());
+	console.log("fn()...."+fn());
+	console.log("fn()...."+fn());
+	console.log("fn()...."+fn());
+// 	fn();
+// 	fn();
+// 	fn();
+// 	fn();
+// 	test()();
+// 	test()();
+// 	test()();
+// 	test()();
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn">change text</button>
+	<p id="p1">hello1</p>
+	<p id="p2">hello2</p>
+	<p id="p3">hello3</p>
+	<p id="p4">hello4</p>
+	<p id="p5">hello5</p>
+</body>
+</html>

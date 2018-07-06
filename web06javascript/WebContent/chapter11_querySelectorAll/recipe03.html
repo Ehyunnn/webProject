@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		try {
+			var cells = document.querySelectorAll("tr:nth-child(3) td");
+		} catch (e) {
+			var tableElement = document.getElementById("thetable");
+			var trs = tableElement.getElementsByTagName("tr");
+			var cells = trs[2].getElementsByTagName("td");
+		}
+
+		// process cell data  
+		var sum = 0;
+		for ( var i = 0; i < cells.length; i++) {
+			var val = parseFloat(cells[i].firstChild.data);
+			//정수만 걸러서 합계계산
+			if (!isNaN(val)) {
+				sum += val;
+			}
+		}
+
+		// output the sum
+		alert("sum " + sum);
+
+	}
+</script>
+</head>
+<body>
+	<table id="thetable" border="1">
+		<tr>
+			<td>One</td>
+			<td>Two</td>
+			<td>Three</td>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>3.45</td>
+			<td>five</td>
+			<td>18</td>
+		</tr>
+	</table>
+</body>
+</html>
+

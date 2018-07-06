@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		// get the existing element
+		var oldDiv = document.getElementById("oldDiv");
+
+		// get the element's parent node
+		var parent = oldDiv.parentNode;
+
+		// create new div element
+		var newDiv = document.createElement("div");
+
+		// attach to page before oldDiv element
+		parent.insertBefore(newDiv, oldDiv);
+
+		// give it some content
+		newDiv.innerHTML = "<p>This is the new div element</p>";
+	}
+</script>
+</head>
+<body>
+	<div id="oldDiv">
+		<p>This is the old content</p>
+	</div>
+
+</body>
+</html>

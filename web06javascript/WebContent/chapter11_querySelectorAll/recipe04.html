@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#elem {
+	padding: 10px;
+	border: 1px solid #000000;
+}
+</style>
+<script>
+	window.onload = function() {
+		// setting and accessing style properties
+		var elem = document.getElementById("elem");
+		console.log("id:" + elem.id);
+		console.log("className:" + elem.className);
+
+		var index = elem.getAttribute("data-index");
+		console.log("data-index:" + index);
+
+		var role = elem.getAttribute("role");
+		console.log("role:" + role);
+
+		var field = document.getElementById("field");
+		console.log("field.checked:" + field.checked);
+		console.log("field.value:" + field.value);
+		console.log("field.type:" + field.type);
+
+	}
+</script>
+</head>
+<body>
+	<div id="elem" class="test" role="article" data-index="1">
+		testing</div>
+	<form>
+		<input id="field" type="text" checked="checked" value="html5&javascript" />
+	</form>
+</body>
+</html>

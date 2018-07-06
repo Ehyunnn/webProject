@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		document.getElementById("test").onclick = function() {
+			var ssn = document.getElementById("pattern").value;
+			// 			var pattern = /^\d{3}-\d{4}-\d{4}$/;
+			var pattern = /^\d{6}-\d{7}$/;
+
+			if (ssn.match(pattern))
+				alert("ssn OK");
+			else
+				alert("ssn Not OK");
+
+		};
+	};
+	
+</script>
+
+
+</head>
+<body>
+	<form id="form1">
+		<input type="text" id="pattern" value="123456-1234567"
+			placeholder="000-0000-0000" />
+	</form>
+	<button id="test">Test</button>
+
+</body>
+</html>

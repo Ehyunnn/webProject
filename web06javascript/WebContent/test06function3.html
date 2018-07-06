@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+	function test(){
+		console.log("test()....");
+		var count = 0;
+		function fn_plus(){
+			count++;
+			return count;
+		}
+		function fn_minus(){
+			count--;
+			return count;
+		}
+// 		return [fn_plus,fn_minus];
+		return {fn_plus:fn_plus,fn_minus:fn_minus};
+	}
+	var fns = test();
+	window.onload = function(){
+		var btn_plus = document.getElementById("btn_plus");
+		var btn_minus = document.getElementById("btn_minus");
+		var p1 = document.getElementById("p1");
+		btn_plus.onclick = function(){
+// 			p1.innerText = fns[0]();
+			p1.innerText = fns.fn_plus();
+		};
+		btn_minus.onclick = function(){
+// 			p1.innerText = fns[1]();
+			p1.innerText = fns.fn_minus();
+		};
+	};
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn_plus">++</button>
+	<button id="btn_minus">--</button>
+	<p id="p1">hello1</p>
+</body>
+</html>

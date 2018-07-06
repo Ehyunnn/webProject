@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" title="default" href="recipe05blue.css" type="text/css"
+	media="screen" />
+<!-- alternate stylesheet : 일반 stylesheet 가 먼저보여지고 동적으로 대체 적용될 숨겨진 스타일. -->
+<link rel="alternate stylesheet" title="yellow" href="recipe05yellow.css"
+	type="text/css" media="screen" />
+
+<script>
+	function setActiveStyleSheet(title) {
+		var a;
+		for ( var i = 0; (a = document.getElementsByTagName("link")[i]); i++) {
+			console.log(a = document.getElementsByTagName("link")[i]);
+			console.log(a.getAttribute("rel").indexOf("style"));//0,10
+			console.log(a.getAttribute("title"));//default,yellow
+			
+			if (a.getAttribute("rel").indexOf("style") != -1
+					&& a.getAttribute("title")) {
+				//style 속성값이 존재하고 title속성값이 존재할경우에 link설정된 모든 스타일을 true 비활성화한다
+				a.disabled = true;//CSS 모든 적용이 사라짐.
+				if (a.getAttribute("title") == title){
+					a.disabled = false;//함수로 넘어온 title문자값과 스타일시트 title 속성값과 같다면 해당 스타일시트 link는 false 활성화
+					console.log(a.getAttribute("title")+"=="+title);					
+				}
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<ul id="menu">
+		<li>
+		<a href="#"
+			onmouseover="setActiveStyleSheet('default');return false;">Blue</a>
+<!-- 		<a href="#" -->
+<!-- 			onclick="setActiveStyleSheet('default');return false;">Blue</a> -->
+		</li>
+
+
+		<li><a href="#"
+			onmouseover="setActiveStyleSheet('yellow');return false;">Yellow</a></li>
+	</ul>
+</body>
+</html>

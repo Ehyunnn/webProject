@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+	function test(){
+		console.log("test()...");
+		return function(x){
+			console.log("return fn(x)..."+x);
+			return function(y){
+				console.log("return fn(y)..."+(x+y));
+			}
+		};
+	}
+	
+	test()(100)(200);
+
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn_plus">++</button>
+	<button id="btn_minus">--</button>
+	<p id="p1">hello1</p>
+</body>
+</html>

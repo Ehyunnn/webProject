@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<!-- jQuery ��ġ 2 : CDN -->
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+
+</script>
+<script>
+	$(document).ready(function() {
+		$("#cal").on("click", function() {
+
+			$.ajax({
+				type : "get",
+				url : "jsp/calc.jsp",
+				data : {
+
+					v1 : $("#v1").val(),
+					v2 : $("#v2").val()
+				},
+				dataType : "text",
+				success : function(responseData, status, xhr) {
+
+					$("#result").text("=" + responseData);
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	��1
+	<input type="text" name="v1" id="v1" value="111"> + ��2
+	<input type="text" name="v2" id="v2" value="222">
+	<div id="result"></div>
+	<button id="cal">����</button>
+
+</body>
+</html>

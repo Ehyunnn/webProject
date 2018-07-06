@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	img{
+		width:200px;
+	}
+	</style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            $('#btn').click(function(){
+            	$('img').first().appendTo('div');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn">next image</button>
+	<div>
+		<img src="Desert.jpg"/>
+	    <img src="Hydrangeas.jpg"/>
+	    <img src="Jellyfish.jpg"/>
+	    <img src="Koala.jpg"/>
+	    <img src="Chrysanthemum.jpg"/>
+	</div>
+</body>
+</html>

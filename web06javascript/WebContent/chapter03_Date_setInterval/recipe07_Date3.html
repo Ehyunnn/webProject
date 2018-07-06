@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#date {
+	width: 200px;
+	height: 20px;
+	background-color: #ffff00;
+	padding: 10px;
+}
+div{
+	background-color: #ff0;
+	width: 200px;
+	text-align: center;
+	padding: 10px;
+	border: 2px inset #f00;
+}
+</style>
+
+<script type="text/javascript">
+	var firstDate;
+	window.onload = startTimer;
+
+	function startTimer() {
+		firstDate = new Date();
+		document.getElementById("button").onclick = doEvent;
+		
+	}
+
+	function doEvent() {
+		var secondDate = new Date();
+		//alert((secondDate - firstDate) / 1000);
+		
+		console.log("secondDate - firstDate:"+(secondDate - firstDate));
+	}
+</script>
+
+</head>
+<body>
+	<div id="button">Click Button</div>
+</body>
+</html>

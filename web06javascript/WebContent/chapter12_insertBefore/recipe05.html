@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		var newAttr = document.createAttribute("newattr");
+		newAttr.nodeValue = "red"; //<newattr="red">
+
+		var targetNode = document.getElementById("target");
+		console.log(targetNode);
+		console.log(targetNode.getAttribute("test"));
+
+// 		// first approach
+		targetNode.setAttributeNode(newAttr);
+		console.log(targetNode);
+		console.log(targetNode.getAttribute("newattr"));
+
+// 		// second approach
+		// targetNode.attr("newattr2", "blue");
+		// console.log(targetNode);
+		// console.log(targetNode.getAttribute("newattr2"));
+
+	}
+</script>
+</head>
+<body>
+	<div id="target" test="aaaaaaa">This is a paragraph in a div element</div>
+
+</body>
+</html>

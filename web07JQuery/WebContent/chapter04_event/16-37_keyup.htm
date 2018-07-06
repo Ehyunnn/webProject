@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.6.2.js"></script>
+    <script>
+        $(document).ready(function (event) {
+//             $('textarea').keyup(function () {
+//                 // ���� ���� ���� ���մϴ�.
+//                 var inputLength = $(this).val().length;
+//                 var remain = 150 - inputLength;
+
+//                 // ���� ��ü�� �Է��մϴ�.
+//                 $('h1').html(remain);
+//             });
+            
+            $('textarea').keydown(function () {
+                // ���� ���� ���� ���մϴ�.
+                var inputLength = $(this).val().length;
+                var remain = 150 - inputLength;
+
+                // ���� ��ü�� �Է��մϴ�.
+                $('h1').html(remain);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>���� �� ������</p>
+        <h1>150</h1>
+        <textarea cols="70" rows="5"></textarea>
+    </div>
+</body>
+</html>

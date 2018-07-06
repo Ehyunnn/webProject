@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+	let sus = [1,2,3];
+	console.log(sus);
+	console.log(sus.length);
+	
+	let arr = [1,"kim",3];
+	console.log(arr);
+	
+	let arr2 = [1,"kim",{num:1,kor:99}];
+	console.log(arr2);
+	arr2 = 100;
+	console.log(arr2);
+	
+	let arr3 = [1,"kim",function(){
+		console.log("fn().....");
+		return 100;}];
+	
+	console.log(arr3);
+	console.log(arr3[0]);
+	console.log(arr3[1]);
+	console.log(arr3[2]);
+	console.log(arr3[2]());
+	
+	var num = arr3[0];
+	var name = arr3[1];
+	var fn = arr3[2];
+	var m = fn();
+	console.log(m);
+	
+	arr3[3] = 1000;
+	console.log(arr3[3]);
+	
+	arr3.push("lee");
+	console.log(arr3[arr3.length-1]);
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<h1 id="aaa">array</h1>
+</body>
+</html>

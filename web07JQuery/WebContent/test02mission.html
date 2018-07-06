@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <script type="text/javascript"  -->
+<!-- src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+<script type="text/javascript" 
+src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		console.log("ready...");
+		$.ajax({
+			url : "http://localhost:8090/web03addressbook/json_selectAll.do",
+			dataType : "json",
+			success : function(list, status, xhr) {
+				console.log(list);
+				$("#result").empty();
+// 				var str = "<tr>";
+// 				str += "<td>"+list[0].num+"</td>";
+// 				str += "<td>"+list[0].name+"</td>";
+// 				str += "</tr>";
+// 				$("#result").html(str);
+				$.each(list,function(i,obj){
+					console.log(obj.num);
+					$("#result").append(function(){
+		 				var str = "<tr>";
+		 				str += "<td>"+obj.num+"</td>";
+		 				str += "<td>"+obj.name+"</td>";
+		 				str += "<td>"+obj.tel+"</td>";
+		 				str += "<td>"+obj.address+"</td>";
+		 				str += "<td>"+obj.wdate+"</td>";
+		 				str += "</tr>";
+						return str;
+					});
+				});
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<p>jquery</p>
+	<table id="result" border="1">
+	
+	</table>
+</body>
+</html>

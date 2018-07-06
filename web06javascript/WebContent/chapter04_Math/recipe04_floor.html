@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#num {
+	height: 100px;
+	width: 100px;
+	background-color: #000000;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		document.onclick = ranNumber;
+		
+		setInterval(ranNumber, 1000);
+	}
+
+	function randomVal(val) {
+		return Math.floor(Math.random() * val);
+	}
+
+	function randomColor() {
+		return "rgb(" + randomVal(255) + "," + randomVal(255) + ","
+				+ randomVal(255) + ")";
+	}
+
+	function ranNumber() {
+		var rgb = randomColor();
+		document.getElementById("num").style.background = rgb;
+// 		document.getElementById("num").setAttribute("style",
+// 				"background-color: " + rgb);
+	}
+</script>
+
+</head>
+<body>
+	<h1>Math.floor(Math.random() * 255)</h1>
+	<p id="num">화면을 클릭하세요.</p>
+</body>
+</html>

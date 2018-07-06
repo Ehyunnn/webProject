@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var dateElement = document.getElementById("date");
+		var today = new Date();
+		var utcDate = today.toUTCString();
+		dateElement.innerHTML = "<p>local datetime: " + today
+				+ "</p><p> UTC datetime: " + utcDate + "</p>";
+	}
+</script>
+</head>
+<body>
+	<div id="date"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+// 		var pieceOfHtml = "<xmp><p>This is a <span>paragraph</span></p></xmp>";
+		var pieceOfHtml = "<p>This is a <span>paragraph</span></p>";
+		pieceOfHtml = pieceOfHtml.replace(/</g, "&lt;");
+		pieceOfHtml = pieceOfHtml.replace(/>/g, "&gt;");
+		document.getElementById("searchResult").innerHTML = pieceOfHtml;
+	}
+</script>
+</head>
+<body>
+	<h3>[HTML 태그를 명명된 엔티티로 치환하기]</h3>
+	<p id="searchResult"></p>
+</body>
+</html>

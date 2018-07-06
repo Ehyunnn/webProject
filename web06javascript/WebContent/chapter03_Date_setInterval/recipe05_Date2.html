@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var month = 7-1; // Month 11, in zero based system, is November
+		var day = 8;
+		var year = 1973;
+		var dt = new Date(year, month, day); // time is set to zero by default
+
+		alert(dt);
+
+		var dateElement = document.getElementById("date");
+		dateElement.innerHTML = dt + "";
+	}
+</script>
+</head>
+<body>
+	<div id="date"></div>
+</body>
+</html>

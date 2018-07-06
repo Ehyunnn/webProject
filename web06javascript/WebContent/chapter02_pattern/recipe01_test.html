@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var cookbookString = new Array();
+
+		cookbookString[0] = "Joe's Cooking Book";
+		cookbookString[1] = "Sam's Cookbook";
+		cookbookString[2] = "JavaScript CookBook";
+		cookbookString[3] = "JavaScript BookCook";
+
+		// search pattern
+		var pattern = /Cook.*Book/;//대소문자 구별함
+		for ( var i = 0; i < cookbookString.length; i++)
+			alert(cookbookString[i] + " " + pattern.test(cookbookString[i]));
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+<h3>정규표현식</h3>
+<xmp>
+정규 표현식: 주어진 패턴에 일치하는 문자열을 찾기 위한 검색 패턴
+			정규표현식 패턴은 여는 슬리시와 닫는 슬래시 사이에 기술합니다.
+주의점: 문자열이 아니다. 작은따옴표나 큰따옴표를 사용 불가.
+		패턴 내부에 따옴표가 사용되는 경우는 상관없음.
+</xmp>
+[정규표현식 특수 문자]
+<table border="1">
+	<tr>
+		<td>^</td>
+		<td>입력값의 시작 </td>
+		<td>/^This/ 는 "This is.." 와 일치 </td>
+	</tr>
+	<tr>
+		<td> $</td>
+		<td>입력값의 끝</td>
+		<td>/end$/는 "This is the end" 와 일치</td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td>0번 이상 반복</td>
+		<td>/se*/는 "seeee"와 "se"에 일치</td>
+	</tr>
+	<tr>
+		<td>?</td>
+		<td>0번 또는 1번 반복</td>
+		<td>/ap?/는 "apple" 과 "and"에 일치</td>
+	</tr> 	 	
+ 
+ 
+	<tr>
+		<td>+</td>
+		<td>1번 이상 반복</td>
+		<td>/ap+/는 "apple"에는 일치. "apie"에는 불일치</td>
+	</tr>
+	<tr>
+		<td>{n}</td>
+		<td>정확히 n번 반복</td>
+		<td>/ap{2}는 "apple"에는 일치. "apie"에는 불일치</td>
+	</tr>
+	<tr>
+		<td> {n,}</td>
+		<td>n번 이상 반복</td>
+		<td>/ap{2,}는 "apple"과 "apple"의 모든 p에 일치. "apie"에는 불일치</td>
+	</tr>
+	<tr>
+		<td> {n,m}</td>
+		<td>최소 n번, 최대 m번</td>
+		<td>/a,p{2,4}/는 "appppppple"의 p 4개에 일치</td>
+	</tr>
+	<tr>
+		<td> .	</td>
+		<td>줄 바꿈을 제외한 모든문자</td>
+		<td>/a,e/는 "ape"와 "axe"에 일치</td>
+	</tr>
+	<tr>
+		<td>[^...]	</td>
+		<td>대괄호 안의 문자를 제외한 모든문자</td>
+		<td> /a[^px]/는 "ale"에는 일치. "axe"나 "ape"에는 불일치</td>
+	</tr>
+	<tr>
+		<td>\b</td>
+		<td>단어 경계</td>
+		<td>/\bno/는 "nono"에서 첫번째 "no"에 일치</td>
+	</tr>
+	<tr>
+		<td> \B</td>
+		<td>단어 경계를 제외한 모든문자</td>
+		<td>/\Bno/는 "nono"에서 두번째 "no"에 일치</td>
+	</tr>
+	<tr>
+		<td>\d</td>
+		<td>0부터 9까지의 숫자</td>
+		<td> /\d{3}는 "Now in 123"에서 123에 일치</td>
+	</tr>
+	<tr>
+		<td>\D</td>
+		<td>숫자를 제외한 모든문자</td>
+		<td>/\D{2,4}/는 "Now in 123" 에서 "Now"에 일치</td>
+	</tr>
+	<tr>
+		<td>\w</td>
+		<td>단어 문자(알파벳,숫자,밑줄)</td>
+		<td>/\w/는 "javascript"에서 "j"에 일치</td>
+	</tr>
+	<tr>
+		<td>\W</td>
+		<td>단어 문자가 아닌 문자</td>
+		<td>(알파벳,숫자,밑줄이 아닌 문자) /\W/는 "100%"에서 "%"에 일치</td>
+	</tr>
+	<tr>
+		<td>\n</td>
+		<td>줄바꿈	</td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td>\s</td>
+		<td>하나의 공백 문자</td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td>\S</td>
+		<td>공백 문자가 아닌 모든 문자</td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td>\t</td>
+		<td>탭</td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td>(x)</td>
+		<td>캡쳐할 괄호</td>
+		<td>일치한 문자들 기억</td>
+	</tr>
+	<tr>
+		<td>[...]</td>
+		<td>대괄호 안의 모든문자 </td>
+		<td> /a[px]e/는 "ape" 와 "axe"에 일치. "ale"에는 불일치</td>
+	</tr>
+</table>
+
+
+
+[정규표현식의 플래그]
+<table border="1">
+	<tr>
+		<td>g</td>
+		<td>전역 검색, 첫 번째 일치 결과에서 멈추지 않고 전체 문자열에 대해 패턴 검색 </td>
+	</tr>
+	<tr>
+		<td>i</td>
+		<td>대소문자를 구분하지 않음</td>
+	</tr>
+	<tr>
+		<td>m</td>
+		<td>여러줄 문자열에서 시작과 끝을 의미하는 특수 문자(^과$)를 각줄에 적용 </td>
+	</tr>
+</table>
+ 	 
+ <xmp>
+
+
+RegExp 객체의 exec 메서드는 정규표현식을 실행하여 일치하는 부분이 없으면 null을 반환하고, 
+일치하는 부분이 있은 배열을 반환한다. 반환된 배열에는 실제로 일치하는 값, 인덱스, 일치하는 괄호 부분 문자열, 원래의 문자열이 포함되어 있다.
+index : 일치하는 부분 인덱스
+input : 원래 입력한 문자열
+[0]또는 배열에 직접 접근 : 일치하는 값
+[1]...[n] : 일치하는 괄호 부분 문자열
+</xmp>
+
+[특수 문자표]
+<table border="1">
+	<tr>
+		<td> $$</td>
+		<td>치환시 달러 문자($)허용</td>
+	</tr>
+	<tr>
+		<td>$&</td>
+		<td>검색한 부분 문자열 삽입</td>
+	</tr>
+	<tr>
+		<td>$'</td>
+		<td>일치한 부분 바로 앞까지의 문자열</td>
+	</tr>
+	<tr>
+		<td>$n</td>
+		<td>RegExp를 사용할 때 n번째 캡처된 괄호값 삽입</td>
+	</tr>
+</table>
+
+</body>
+</html>

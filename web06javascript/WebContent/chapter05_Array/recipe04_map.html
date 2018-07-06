@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn(element, index, array) {
+		return element.toString(16);
+		// return element*100;
+	}
+
+	var decArray = new Array(23, 255, 122, 5, 16, 99);
+// 	alert(decArray);
+	console.log(decArray);
+	var newArray = decArray.map(fn);
+// 	alert(hexArray); // 17,ff,a,5,10,63
+	console.log(newArray);
+</script>
+</head>
+<body>
+
+</body>
+</html>

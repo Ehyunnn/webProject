@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var elemSet = new Array("**", 123, "aaa", "abc", "-", 46, "AAA");
+
+	//testing function 
+	function textValue(element, index, array) {
+		var textExp = /^[a-zA-Z]+$/;//영문 소문자와 대문자로만 만들어진 엘리먼트 검증.
+		//해당되면 test함수는 true return
+		var bool = textExp.test(element);
+		console.log(element+":"+bool);
+		return bool;
+	}
+
+	//every:모든 배열의 element가 조건을 만족하는지 체크할때 즉 하나라도 만족하지 않으면 false
+	console.log(elemSet.every(textValue));
+	//alert(elemSet.every(textValue)); // false
+
+	var elemSet = new Array("**", 123, "aaa", "abc", "-", 46, "AAA");
+	//some:every의 반대 즉 어느 하나라도 element가 조건을 만족하면 true
+	console.log(elemSet.some(textValue));
+	//alert(elemSet.some(textValue)); // true
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+

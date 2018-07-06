@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		document.onclick = ranNumber;
+	};
+
+	function ranNumber() {
+		var randomNumber = Math.floor(Math.random() * 255);
+		document.getElementById("num").innerHTML = randomNumber;
+	}
+</script>
+</head>
+<body>
+	<h1>Math.floor(Math.random() * 255)</h1>
+	<p id="num">화면을 클릭하세요.</p>
+</body>
+</html>

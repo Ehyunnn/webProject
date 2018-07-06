@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.demo {
+	background-color: #00f;
+	color: #ffff00;
+	width: 200px;
+	height: 150px;
+}
+</style>
+<script>
+	window.onload = function() {
+
+		var div = document.getElementById("demodiv");
+		
+		var classnm = div.getAttribute("class");//class속성의 값인 demo획득
+		// IE 7
+		// classnm = div.className;
+		console.log(classnm);//deme출력
+
+		
+		var outputString = "";
+		outputString += "demodiv has class <mark>" + classnm + "</mark><br />";
+
+		var parent = div.parentNode;
+		outputString += " parent node is <mark>" + parent.nodeName + "</mark><br />";
+
+		if (div.hasChildNodes()) {
+			var children = div.childNodes;
+			
+			for ( var i = 0; i < children.length; i++) {
+				outputString += " has child <mark>" + children[i].nodeName + "</mark><br />";
+			}
+			
+			
+			
+		}
+
+		document.getElementById("result").innerHTML = outputString;
+	}
+</script>
+</head>
+<body>
+	<div id="demodiv" class="demo">
+		A<p>Some text</p>B
+		<p>Some more text</p>C
+	</div>
+	
+	<xmp>
+	<body>
+		<div id="demodiv" class="demo">
+			A<p>Some text</p>B
+			<p>Some more text</p>C
+		</div>
+	</body>
+	</xmp>
+	
+	<div id="result"></div>
+</body>
+</html>

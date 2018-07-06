@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#num {
+	height: 100px;
+	width: 100px;
+	background-color: #000000;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		document.onclick = ranNumber;
+	}
+
+	function randomVal(val) {
+		return Math.floor(Math.random() * val);
+	}
+
+	function randomColor() {
+		// get red
+		var r = randomVal(255).toString(16);
+		if (r.length < 2)
+			r = "0" + r;
+
+		// get green
+		var g = randomVal(255).toString(16);
+		if (g.length < 2)
+			g = "0" + g;
+
+		// get blue
+		var b = randomVal(255).toString(16);
+		if (b.length < 2)
+			b = "0" + b;
+
+		return "#" + r + g + b;
+	}
+
+	function ranNumber() {
+		//16진수 변환 후 리턴받음.
+		var hex = randomColor();
+		document.getElementById("num").style.backgroundColor = hex;
+	}
+</script>
+
+</head>
+<body>
+	<h1>Math.floor(Math.random() * 255) 16진수</h1>
+	<p id="num">화면을 클릭하세요.</p>
+</body>
+</html>
+

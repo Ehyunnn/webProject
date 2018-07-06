@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		document.onclick = nextTest;
+	}
+
+	var globalCounter = 0;
+	function nextTest() {
+		globalCounter++;
+		//alert('globalCounter is ' + globalCounter);
+		console.log('globalCounter is '+globalCounter)
+	}
+</script>
+</head>
+<body>
+<h1>화면을 클릭하면서 로그를 확인하세요~</h1>
+<h1>Math Object Properties</h1>
+<xmp>
+Property	Description
+E			오일러의 수 (approx. 2.718)
+LN2			2의 자연로그 값 (approx. 0.693)
+LN10		10의 자연로그 값 (approx. 2.302)
+LOG2E		2를 밑으로 하는 자연로그 값 (approx. 1.442)
+LOG10E		10을 밑으로 하는 자연로그 값 (approx. 0.434)
+PI			파이 (approx. 3.14)
+SQRT1_2		1/2의 제곱근 (approx. 0.707)
+SQRT2		2의 제곱근 (approx. 1.414)
+</xmp>
+
+
+<h1>Math Object Methods</h1>
+<xmp>
+Method		Description
+abs(x)		x의 절대값
+acos(x)		x의 arccosine, 라디안
+asin(x)		x의 arcsine, 라디안
+atan(x)		x의 arctangent,  -PI/2 와 PI/2 사이의 라디안
+atan2(y,x)	x의 arctangent
+ceil(x)		올림
+cos(x)		코사인 
+exp(x)		x를 밑으로 하는 지수
+floor(x)	내림
+log(x)		E를 밑으로 하는 로그값
+max(x,y,z,...,n)   	인자 중 max값
+min(x,y,z,...,n)	인자 중 min값
+pow(x,y)	x의 y제곱
+random()	0 과 1 사이의 난수
+round(x)	반올림
+sin(x)		sine
+sqrt(x)		제곱근
+tan(x)		탄젠트
+</xmp>
+</body>
+</html>

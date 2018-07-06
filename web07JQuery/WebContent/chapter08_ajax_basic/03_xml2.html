@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<!-- jQuery 설치 2 : CDN -->
+<script src="jquery-1.8.2.js"></script>
+<script>
+/*   크롬 브라우저에서 실행할 것. */
+    $(document).ready( function(){
+    	$("#broadcast").bind( "click" , function(){
+    		
+    		$.ajax({
+    			url: "jsp/ajax3.xml",
+    			dataType: "xml",
+    			success: function( responseData, status , xhr ){
+    				$('#result').empty();
+    				$(responseData).find('title').each(function(){
+    					console.log( $(this).text());
+    					$('#result').append( $(this).text());
+    				});
+    				$(responseData).find('album').each(function(){
+    					console.log( $(this).text());
+    					$('#result').append( $(this).text());
+    				});
+    			},
+    			error: function(error){
+    				alert(error);
+    			}
+    		})
+    	});
+    });
+</script>
+</head>
+<body>
+<button id="broadcast">요청</button>
+<div id="result"></div>
+</body>
+</html>

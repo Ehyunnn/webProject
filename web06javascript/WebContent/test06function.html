@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+// 	test();
+	function test2(){
+		console.log("test2()...."+arguments[0]);
+		console.log("test2()...."+arguments[1]);
+		console.log("test2()...."+arguments[2]);
+		if(arguments[2]==undefined){
+			console.log("aaaaa");
+			arguments[2] = 1000;
+		}
+		return arguments[0]+arguments[1]+arguments[2];
+	}
+	function test(x,y){
+		console.log("test(x,y)...."+x+y);
+		return x+y;
+	}
+	var su = test(11,22);
+	console.log(su);
+	
+	var su2 = test2(33,44);
+	console.log(su2);
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn">change text</button>
+	<p id="p1">hello1</p>
+	<p id="p2">hello2</p>
+	<p id="p3">hello3</p>
+	<p id="p4">hello4</p>
+	<p id="p5">hello5</p>
+</body>
+</html>

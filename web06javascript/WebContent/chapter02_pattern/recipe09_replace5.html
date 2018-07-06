@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var re = /\\d/;
+		var pattern = "\\d{4}";
+		var pattern2 = pattern.replace(re, "\\D");
+		document.getElementById("searchResult").innerHTML = pattern + " >> "
+				+ pattern2;
+	}
+</script>
+</head>
+<body>
+	<p id="searchResult"></p>
+	<pre>
+	[특수 문자 검색하기]
+	
+	Q. 지금까지는 숫자와 문자 그리고 숫자나 문자가아닌 것들을 검색했다. 이번에는 정규표현식 문자 그자체를 검색 한다.
+	A. 백슬래시를 사용하여 패턴 검색 문자를 이스케이프 하면된다.
+	
+	var re = /\\d/;
+	var pattern = "\\d{4}";
+	var pattern2 = pattern.replace(re,"\\D");
+	
+	숫자를 검색하는 특수 문자 \d에 대응하도록 정규표현식.
+	문자열 안에서 검색하기 위해 패턴을 이스케이프했다.
+	그후 숫자 특수 문자는 숫자가 아닌 것을 검색하는 특수 문자 \D로 치환 되었다.
+	</pre>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var dtstr = "1973-07-08T17:42:51Z";
+
+		dtstr = dtstr.replace(/\D/g, " ");//정수아닌것 공백치환
+		var dtcomps = dtstr.split(" ");//공백으로 자르기
+
+		// modify month between 1 based ISO 8601 and zero based Date
+		dtcomps[1]--;
+
+		var convdt = new Date(Date.UTC(dtcomps[0], dtcomps[1], dtcomps[2],
+				dtcomps[3], dtcomps[4], dtcomps[5]));
+		alert(convdt);
+		
+		var dateElement = document.getElementById("date");
+		dateElement.innerHTML = convdt+"";
+	}
+</script>
+</head>
+<body>
+	<div id="date"></div>
+</body>
+</html>

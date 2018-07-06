@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	//객체를 이용하여 세팅하기
+	var obj = {num:1,name:"kim1",kor:11,eng:12,math:13};
+	var obj2 = {num:2,name:"kim2",kor:21,eng:22,math:23};
+	var obj3 = {num:3,name:"kim3",kor:31,eng:32,math:33};
+	
+	var arr = [obj,obj2,obj3];
+	
+	window.onload = function(){
+		var p1 = document.getElementById("p1");
+		var p2 = document.getElementById("p2");
+		var p3 = document.getElementById("p3");
+		var p4 = document.getElementById("p4");
+		var p5 = document.getElementById("p5");
+		console.log(p1);
+		console.log(p2);
+		console.log(p3);
+		console.log(p4);
+		console.log(p5);
+// 		p1.innerText = obj.num;
+// 		p2.innerText = obj.name;
+// 		p3.innerText = obj.kor;
+// 		p4.innerText = obj.eng;
+// 		p5.innerText = obj.math;
+		
+		var btn = document.getElementById("btn");
+		console.log(btn);
+		var count = 0;
+		btn.onclick = function(){
+			console.log("onclick..."+count);
+			console.log(arr[count]);
+			p1.innerText = arr[count].num;
+			p2.innerText = arr[count].name;
+			p3.innerText = arr[count].kor;
+			p4.innerText = arr[count].eng;
+			p5.innerText = arr[count].math;
+			count++;
+			if(count==3)count=0;
+		};
+	};
+	//버튼을 만들고 버튼을 클릭하면 값이 바뀌도록하기
+	//단 바뀔 값은 배열에서 가져다가 바꾸기.
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn">change text</button>
+	<p id="p1">hello1</p>
+	<p id="p2">hello2</p>
+	<p id="p3">hello3</p>
+	<p id="p4">hello4</p>
+	<p id="p5">hello5</p>
+</body>
+</html>

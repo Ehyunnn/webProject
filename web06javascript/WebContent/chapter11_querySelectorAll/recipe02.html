@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		document.getElementById("button1").onclick = checkChecks;
+	}
+
+	function checkChecks() {
+		var str = "checked values<br/>";
+		
+		var radio_checked = document.querySelectorAll(
+				"#checks input[type='radio']:checked");
+		for ( var i = 0; i < radio_checked.length; i++) {
+			str += "["+radio_checked[i].value + "]";
+		}
+		
+		try {
+			var checked = document
+					.querySelectorAll("#checks input[type='checkbox']:checked");
+			for ( var i = 0; i < checked.length; i++) {
+				str += checked[i].value + " ";
+			}
+		} catch (e) {
+			var inputs = document.querySelectorAll("#checks input");
+			for ( var j = 0; j < inputs.length; j++) {
+				if (inputs.item(j).type == "checkbox" && inputs.item(j).checked) {
+					str += inputs.item(j).value + " ";
+				}
+			}
+		}
+		document.getElementById("results").innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	<form id="checks" onsubmit="return false">
+		<label for="test">성별</lable>
+			남:<input type="radio" id="test" name="test" value="남" /> 
+			여:<input type="radio" id="test" name="test" value="여" /><br /><br />
+			
+		<label for="one">html5</label>
+			<input type="checkbox" id="one" name="one" value="html5" /><br /> 
+		<label for="two">java</label>
+			<input type="checkbox" id="two" name="two" value="java" /><br /> 
+		<label for="three">C,C++</label>
+			<input type="checkbox" id="three" name="three" value="C,C++" /><br />
+	</form>
+	<div>
+		<button id="button1">Check checks</button>
+	</div>
+	<div id="results"></div>
+</body>
+</html>

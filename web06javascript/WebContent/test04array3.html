@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+	window.onload = function(){
+		var ul = document.getElementById("ul01");
+// 		var li = ul.children[0].firstChild.data;
+// 		console.log(li);
+// 		console.log(ul);
+// 		console.log(ul.children);
+// 		console.log(ul.children.length);
+		for(var i=0;i<ul.children.length;i++){
+			console.log(ul.children[i].firstChild.data);
+		}
+		
+		
+		var ul2 = document.getElementById("ul02");
+		var newArray = new Array();
+		for(var i=0;i<ul2.children.length;i++){
+			newArray.push(ul2.children[i].firstChild.data);
+		}
+		for ( var i in newArray) {
+			console.log(newArray[i]);
+		}
+		var result = newArray.filter(function(value) {
+			value = parseInt(value);
+			console.log(isNaN(value));
+			return isNaN(value);
+		});
+		console.log(result);
+		console.log("=====");
+		for ( var i in result) {
+			console.log(result[i]);
+		}
+	};
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<ul id="ul01">
+		<li>aaa1</li>
+		<li>aaa2</li>
+		<li>aaa3</li>
+		<li>aaa4</li>
+		<li>aaa5</li>
+	</ul>
+	<ul id="ul02">
+		<li>11</li>
+		<li>aa</li>
+		<li>22</li>
+		<li>33</li>
+		<li>bb</li>
+	</ul>
+</body>
+</html>

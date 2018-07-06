@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div.out {
+	width: 40%;
+	height: 120px;
+	margin: 0 15px;
+	background-color: #D6EDFC;
+	float: left;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+<script>
+	$(document).ready(function() {
+		var count = 0;
+		$("button").click(function() {
+			var src = "dragonfly2.thumbnail.jpg";
+			console.log(src);
+			if(count%2==0){
+				$.get("recipe03jquery.jsp?photo="+src, 
+						function(data, status) {
+							$("div.out").text(data);
+							console.log(data);
+						});
+				
+			}else{
+				$("div.out").text("버튼을 클릭하세요");
+			}
+			count++;
+		});
+		$("a").click(function(event) {
+// 			event.preventDefault();
+
+
+			return false;
+		});
+		
+		
+		
+	});
+</script>
+</head>
+<body>
+	<button>get() 버튼</button>
+	<div class="out"></div>
+	<a href="http://naver.com">naver</a>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#redbox {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+	left: 0;
+	top: 0px;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		var x = 0;
+		var y = 0;
+		//1초의 인터벌 설정
+		setInterval(moveElement, 100);
+
+		function moveElement() {
+			x += 10;
+			
+			var left = x + "px";
+			var top = y + "px";
+			document.getElementById("redbox").style.left = left;
+			document.getElementById("redbox").style.top = top;
+			console.log("x:"+x+",y:"+y);
+			if(x>100){
+				x=-10;
+				y+=10;
+			}
+			if(y>100)y=0;
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="redbox"></div>
+</body>
+</html>

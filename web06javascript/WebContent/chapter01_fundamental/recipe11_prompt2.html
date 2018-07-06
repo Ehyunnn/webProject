@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		// get keyword list
+		var keywordList = prompt("Enter keywords, separated by commas", 
+				"aaa,bbb,ccc");
+
+		// use split to create array of keywords
+		var arrayList = keywordList.split(",");
+
+		// build result HTML
+		var resultString = "";
+		for ( var i = 0; i < arrayList.length; i++) {
+			resultString += "keyword: " + arrayList[i] + "<br />";
+		}
+
+		// print out to page
+		var blk = document.getElementById("result");
+		blk.innerHTML = resultString;
+	}
+</script>
+</head>
+<body>
+	<div id="result"></div>
+</body>
+</html>
+
+

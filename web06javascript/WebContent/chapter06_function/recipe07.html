@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function greetingMaker(greeting) {
+		var count=0;
+		function addName(name) {
+			return greeting + " " + name + count++;
+		}
+		return addName;
+	}
+	window.onload = function() {
+
+		var daytimeGreeting = greetingMaker("Good Day to you");
+		var nightGreeting = greetingMaker("Good Evening");
+
+		var name = prompt("Please enter your name", "yangssem");
+
+		// daytimeGreeting함수는 addName(name)함수를 리턴값으로 받기때문에 name을 전달할수있다.
+// 		alert(daytimeGreeting(name));
+		console.log(daytimeGreeting(name));
+		console.log(daytimeGreeting(name));
+		console.log(daytimeGreeting(name));
+
+		// if night 
+// 		alert(nightGreeting(name));
+		console.log(nightGreeting(name));
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

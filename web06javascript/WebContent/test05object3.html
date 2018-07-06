@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	//객체를 이용하여 세팅하기
+	var obj = new Object();
+	obj.num = 8;
+	obj.name = "lee";
+	obj.tel = "010";
+	
+	for ( var key in obj) {
+		console.log(obj[key]);
+	}
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn">change text</button>
+	<p id="p1">hello1</p>
+	<p id="p2">hello2</p>
+	<p id="p3">hello3</p>
+	<p id="p4">hello4</p>
+	<p id="p5">hello5</p>
+</body>
+</html>

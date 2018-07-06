@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<!-- jQuery ��ġ 2 : CDN -->
+<script
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+</script>
+<script>
+/*   ũ�� ������������ ������ ��. */
+    $(document).ready( function(){
+    	$("#broadcast").bind( "click" , function(){
+
+    		$.ajax({
+    			url: "jsp/broadcast.xml",
+    			dataType: "xml",
+    			success: function( responseData, status , xhr ){
+    				$('#result').empty();
+    				$(responseData).find('entry').each(function(){
+    					var entry = $(this);
+    					var str = "<div>";
+    					str += entry.attr("term") + " " + entry.attr("part");
+    					str += entry.find("mes").text();
+    					str += "</div>";
+    					$('#result').append(str);
+    				});
+    			},
+    			error: function(error){
+    				alert(error);
+    			}
+    		})
+    	});
+    });
+</script>
+</head>
+<body>
+<button id="broadcast">��û</button>
+<div id="result"></div>
+</body>
+</html>

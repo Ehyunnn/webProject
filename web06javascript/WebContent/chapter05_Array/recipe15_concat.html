@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	var x = new Array(0,1,2);
+	var y = new Array(8,9,10);
+	var y2 = new Array(8,9,10);
+	var y3 = new Array(8,9,10);
+	var y4 = new Array(8,9,10);
+	//flatten array concat 배열 병합 +=연산과 유사
+// 	var z = x.concat(y);
+	var z = x.concat(y,y2,y3,y4);
+	for(var i=0;i<z.length;i++){
+		console.log(z[i]);
+	}
+	console.log("==========");
+
+	var origArray = new Array();
+	origArray[0] = new Array("one", "two");
+	origArray[1] = new Array("three", "four");
+	origArray[2] = new Array("five", "six");
+	origArray[3] = new Array("seven", "eight");
+	console.log("origArray.length:"+origArray.length+"\n");
+	
+	// flatten array concat 배열 병합
+	var newArray = origArray[0].concat(origArray[1], origArray[2], origArray[3]);
+	console.log("newArray.length:"+newArray.length+"\n");
+	for ( var x = 0; x < newArray.length; x++) {
+		console.log(newArray[x]);
+	}
+	console.log("==========");
+	console.log(newArray.indexOf("seven"));
+</script>
+</head>
+<body>
+</body>
+</html>

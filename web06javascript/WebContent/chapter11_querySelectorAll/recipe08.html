@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+li:nth-child(even){
+	color:#f00;
+}
+</style>
+<script>
+	window.onload = function() {
+		document.getElementById("pink").onclick = paintPink;
+		document.getElementById("blue").onclick = paintBlue;
+		document.getElementById("green").onclick = paintGreen;
+	}
+
+	function paintPink() {
+		try {
+			var lis = document.querySelectorAll('li:nth-child(2n+1)');
+			for ( var i = 0; i < lis.length; i++) {
+				lis[i].setAttribute("style", "background-color: #ff0000");
+			}
+		} catch (e) {
+			alert("Doesn't work in this browser");
+		}
+	}
+
+	function paintBlue() {
+		try {
+			var lis = document.querySelectorAll('li:nth-child(even)');
+			for ( var i = 0; i < lis.length; i++) {
+				lis[i].setAttribute("style", "background-color: #0000ff");
+			}
+		} catch (e) {
+			alert("Doesn't work in this browser");
+		}
+	}
+
+	function paintGreen() {
+		var parentElement = document.getElementById("thelist");
+		var lis = parentElement.getElementsByTagName("li");
+		for ( var i = 0; i < lis.length; i++) {
+			if (i % 2 == 0) {
+				lis[i].setAttribute("style", "background-color: #00ff00");
+
+				// IE7
+				// lis[i].style.backgroundColor = "#eeffee";
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<div>
+		<button id="pink">Pink Stripes</button>
+		<button id="blue">Blue Stripes</button>
+		<button id="green">Green Stripes</button>
+	</div>
+	<ul id="thelist">
+		<li>Apples and Oranges</li>
+		<li>Hansel and Hans</li>
+		<li>Some of this and some of that</li>
+		<li>After so many examples, you run out of ideas</li>
+		<li>One more after this</li>
+		<li>And now we're done</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log("start....");
+	
+	var fn = (a) => {return a};
+	console.log(fn(100));
+	
+	
+	var fn = (a,b) => {return a+b};
+	console.log(fn(100,200));
+	
+	var fn = (arr,obj) => {return arr[0]+arr[1]+obj.c};
+	console.log(fn([11,22],{c:33}));
+	
+	function test(fn){
+		console.log(fn([100,200],{c:300}));
+	}
+	
+	test((arr,obj) => {return arr[0]+arr[1]+obj.c});
+	
+	console.log("end....");
+</script>
+</head>
+<body>
+	<button id="btn_plus">++</button>
+	<button id="btn_minus">--</button>
+	<p id="p1">hello1</p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var animals = new Array("dog", "cat", "seal", 
+			"walrus해마", "lion", "cat");
+	var startIndex = animals.indexOf("walrus해마");
+	console.log("startIndex:" + startIndex);
+	var howmany = 0;//시작인덱스부터 0개 엘리먼트 지우기. 즉 지워지지 않음.
+	//1.animals.splice(startIndex,howmany)
+	animals.splice(startIndex, howmany);
+	console.log(startIndex + ":" + howmany + "=" + animals);
+
+	animals = new Array("dog", "cat", "seal", "walrus해마", "lion", "cat");
+	howmany = 1;//시작인덱스부터 한개 엘리먼트가 지워짐
+	//animals.splice(startIndex,howmany)
+	animals.splice(startIndex, howmany);
+	console.log(startIndex + ":" + howmany + "=" + animals);
+
+	animals = new Array("dog", "cat", "seal", "walrus해마", "lion", "cat");
+	howmany = 2;//시작인덱스부터 두개 엘리먼트가  지워짐
+	//animals.splice(startIndex,howmany)
+	animals.splice(startIndex, howmany);
+	console.log(startIndex + ":" + howmany + "=" + animals);
+
+	//2.animals.splice(startIndex,howmany,element1,.....,elementX)
+	animals = new Array("dog", "cat", "seal", "walrus해마", "lion", "cat");
+	startIndex = animals.indexOf("cat");
+	howmany = 2;//시작인덱스부터 두개 아이템이  지워지고 시작인덱스에 엘리먼트가 추가됨.
+	animals.splice(startIndex, howmany, "monkey", "monkey2", "monkey3");
+	console.log(startIndex + ":" + howmany + "=" + animals);
+
+	//alert(animals);
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+</body>
+</html>

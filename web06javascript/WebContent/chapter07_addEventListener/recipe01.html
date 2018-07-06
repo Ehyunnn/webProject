@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#box {
+	width: 100px;
+	height: 100px;
+	background-color: #0f0;
+}
+</style>
+<script>
+// 	window.onload = function(){
+		
+// 	};
+// 	window.addEventListener("load",function(){},false);
+
+
+	function listenEvent(eventObj, event, eventHandler) {
+		console.log("1...listenEvent(eventObj, event, eventHandler)...");
+		if (eventObj.addEventListener) {
+			eventObj.addEventListener(event, eventHandler, false);
+			console.log("2......표준이벤트");
+		} else if (eventObj.attachEvent) {//IE용 이벤트
+			event = "on" + event;
+			eventObj.attachEvent(event, eventHandler);
+			console.log("2....IE용 이벤트");
+		} else {
+			eventObj["on" + event] = eventHandler;
+			console.log("2....기타 브라우져 이벤트");
+		}
+	}
+
+	function stopListening(eventObj, event, eventHandler) {
+		console.log("6...cancelEvent(event)...");
+
+		if (eventObj.removeEventListener) {
+			eventObj.removeEventListener(event, eventHandler, false);
+		} else if (eventObj.detachEvent) {
+			event = "on" + event;
+			eventObj.detachEvent(event, eventHandler);
+		} else {
+			eventObj["on" + event] = null;
+		}
+	}
+
+	// cancel event
+	function cancelEvent(event) {
+		console.log("5...cancelEvent(event)...");
+		if (event.preventDefault) {
+			event.preventDefault();
+		} else {
+			event.returnValue = false;
+		}
+	}
+
+	listenEvent(window, "load", function() {
+		console.log("3...window.load...");
+		var theform = document.getElementById("theform");
+		listenEvent(theform, "submit", validateForm);
+	});
+
+	function validateForm(evt) {
+		console.log("4...."+evt.toString());
+		
+		//or 연산후 대입
+		evt = evt || window.event;
+		
+		//display div
+		display();
+		
+		// pretend form is invalid
+		cancelEvent(evt);
+		
+// 		console.log("form action:"+document.getElementById("theform").action)
+// 		var action = document.getElementById("theform").action;
+// 		window.location=action;
+	}
+
+	function display() {
+		var div = document.createElement("div");
+
+		var text = document.getElementById("test").value;
+		div.innerHTML = text;
+		document.getElementById("result").appendChild(div);
+	}
+</script>
+</head>
+<body>
+	<form id="theform" action="recipe02.html" method="GET">
+		<input type="text" name="test" id="test" value="aaaaaaaaa"/> <br />
+		<button type="submit">Submit</button>
+	</form>
+	<div id="result"></div>
+</body>
+</html>

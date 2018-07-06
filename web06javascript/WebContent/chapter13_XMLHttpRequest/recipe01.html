@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function size() {
+		var wdth = 0;
+		var hth = 0;
+
+		if (!window.innerWidth) {
+			wdth = (document.documentElement.clientWidth ? document.documentElement.clientWidth
+					: document.body.clientWidth);
+			hth = (document.documentElement.clientHeight ? document.documentElement.clientWidth
+					: document.body.clientHeight);
+		} else {
+			wdth = window.innerWidth;
+			hth = window.innerHeight;
+		}
+		return {
+			width : wdth,
+			height : hth
+		};
+	}
+	window.onload = function() {
+		var windowSize = size();
+		var div = document.getElementById("result");
+		div.innerHTML =  "width is " + windowSize.width + " height is "
+				+ windowSize.height;
+	};
+</script>
+</head>
+<body>
+	<h2>현재 화면사이즈를 획득</h2>
+	<div id="result"></div>
+</body>
+</html>

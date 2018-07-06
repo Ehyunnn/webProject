@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var searchString = "Now te is the time, this is thxe tede<br/>";
+		var re = /t\w{2}e/g;
+
+		var str = searchString;
+		while ((matchArray = re.exec(searchString)) != null) {
+			str += "at " + matchArray.index + " we found <mark>"
+					+ matchArray[0] + "</mark><br />";
+		}
+		var replacement = searchString.replace(re, "place");
+		str += replacement;
+		document.getElementById("results").innerHTML = str;
+
+		//alert(replacement); // Now is the place, this is the place
+	}
+</script>
+</head>
+<body>
+	<p id="results"></p>
+</body>
+</html>
